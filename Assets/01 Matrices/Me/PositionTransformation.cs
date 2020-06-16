@@ -7,10 +7,6 @@ namespace Me
     public class PositionTransformation : TransformationBase
     {
         public Vector3 position;
-        public override Vector3 Apply(Vector3 point)
-        {
-            return position + point;
-        }        
 
         public override Matrix4x4 Matrix
         {

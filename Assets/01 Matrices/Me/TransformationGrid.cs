@@ -53,7 +53,6 @@ namespace  Me
             Matrix4x4 matrix = Matrix4x4.identity;
             foreach(TransformationBase t in m_Transformations)
             {
-                //coordinate = t.Apply(coordinate);
                 matrix *= t.Matrix;
             }
             return matrix.MultiplyPoint(coordinate);
