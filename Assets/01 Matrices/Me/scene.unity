@@ -214,9 +214,9 @@ GameObject:
   m_Component:
   - component: {fileID: 502506030}
   - component: {fileID: 502506029}
-  - component: {fileID: 502506031}
   - component: {fileID: 502506032}
   - component: {fileID: 502506033}
+  - component: {fileID: 502506031}
   m_Layer: 0
   m_Name: TransformationGrid
   m_TagString: Untagged

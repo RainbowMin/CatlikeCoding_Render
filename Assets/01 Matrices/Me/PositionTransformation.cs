@@ -10,7 +10,7 @@ namespace Me
         public override Vector3 Apply(Vector3 point)
         {
             return position + point;
-        } 
+        }        
     }
 
 }
