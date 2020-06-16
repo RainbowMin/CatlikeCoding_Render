@@ -8,23 +8,25 @@ namespace  Me
     {
         public Transform prefab;
         public int m_GridResolution = 10;
+        public Transform[] m_Grid;
 
-        //[serialized]
-        public Transform[] gird;
+        List<TransformationBase> m_Transformations;
 
         void Awake()
         {
-            gird = new Transform[m_GridResolution * m_GridResolution * m_GridResolution];
+            m_Grid = new Transform[m_GridResolution * m_GridResolution * m_GridResolution];
             for (int i = 0, z = 0; z < m_GridResolution; z++)
             {
                 for (int y = 0; y < m_GridResolution; y++)
                 {
                     for (int x = 0; x < m_GridResolution; x++, i++)
                     {
-                        gird[i] = CreateGridPoint(x,y,z);
+                        m_Grid[i] = CreateGridPoint(x,y,z);
                     }
                 }
             }
+
+            m_Transformations = new List<TransformationBase>();
         }
         
         Transform CreateGridPoint(int x, int y, int z)
@@ -38,20 +40,37 @@ namespace  Me
 
         Vector3 GetCoordinates(int x, int y, int z)
         {
-            //return new Vector3(x,y,z);
-
             return new Vector3(
                 x - (m_GridResolution - 1) * 0.5f,
                 y - (m_GridResolution - 1) * 0.5f,
                 z - (m_GridResolution - 1) * 0.5f
             );
+        }
 
-            
+        Vector3 TransformPoint(int x, int y, int z)
+        {
+            Vector3 coordinate = GetCoordinates(x,y,z);
+            foreach(TransformationBase t in m_Transformations)
+            {
+                coordinate = t.Apply(coordinate);
+            }
+            return coordinate;
         }
 
         void Update()
         {
-            
+            GetComponents<TransformationBase>(m_Transformations);
+
+            for (int i = 0, z = 0; z < m_GridResolution; z++)
+            {
+                for (int y = 0; y < m_GridResolution; y++)
+                {
+                    for (int x = 0; x < m_GridResolution; x++, i++)
+                    {
+                        m_Grid[i].localPosition = TransformPoint(x,y,z);
+                    }
+                }
+            }
         }
     }
 }

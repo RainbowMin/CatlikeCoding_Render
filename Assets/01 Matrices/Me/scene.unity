@@ -214,6 +214,9 @@ GameObject:
   m_Component:
   - component: {fileID: 502506030}
   - component: {fileID: 502506029}
+  - component: {fileID: 502506031}
+  - component: {fileID: 502506032}
+  - component: {fileID: 502506033}
   m_Layer: 0
   m_Name: TransformationGrid
   m_TagString: Untagged
@@ -235,7 +238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 5237875211425468678, guid: 2ef68751583686e4f88a32c3bcb03d3c, type: 3}
   m_GridResolution: 10
-  gird: []
+  m_Grid: []
 --- !u!4 &502506030
 Transform:
   m_ObjectHideFlags: 0
@@ -250,6 +253,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &502506031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502506028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9aeb5357c05af143aebef45b164975f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {x: 0, y: 0, z: 0}
+--- !u!114 &502506032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502506028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4ad688c68f32f44194b42f6ee02a446, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Scale: {x: 1, y: 1, z: 1}
+--- !u!114 &502506033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502506028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd15935a8dec3fa4ba22b289b718eaf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotation: {x: 0, y: 0, z: 0}
 --- !u!1 &1929923760
 GameObject:
   m_ObjectHideFlags: 0
